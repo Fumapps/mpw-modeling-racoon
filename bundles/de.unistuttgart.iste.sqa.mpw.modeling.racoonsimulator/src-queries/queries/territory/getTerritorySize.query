@@ -1,0 +1,4 @@
+context Territory
+
+/** Return the size of the current territory. From the size you can retrieve the number of rows and colums. */
+query getTerritorySize: self.stageSize;

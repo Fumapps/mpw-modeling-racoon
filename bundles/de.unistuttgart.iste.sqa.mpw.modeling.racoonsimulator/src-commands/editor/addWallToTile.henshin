@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_MFrY0CZjEeuiY_E2amZoVQ" name="addWallToTile">
+  <imports href="../../model/Racoon.ecore#/"/>
+  <imports href="http://www.mpw.uni-stuttgart.de/mpw#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_hCUK0CZjEeuiY_E2amZoVQ" name="addWallToTile">
+    <lhs xmi:id="_hCXOICZjEeuiY_E2amZoVQ" name="Lhs">
+      <nodes xmi:id="_Z_xvEBLaEeyRtoBjqFMidw" name="self">
+        <type href="../../model/Racoon.ecore#//Territory"/>
+      </nodes>
+    </lhs>
+    <rhs xmi:id="_hCXOISZjEeuiY_E2amZoVQ" name="Rhs">
+      <nodes xmi:id="_Z_yWIBLaEeyRtoBjqFMidw" name="self">
+        <type href="../../model/Racoon.ecore#//Territory"/>
+      </nodes>
+    </rhs>
+    <mappings xmi:id="_Z_yWIRLaEeyRtoBjqFMidw" origin="_Z_xvEBLaEeyRtoBjqFMidw" image="_Z_yWIBLaEeyRtoBjqFMidw"/>
+  </units>
+</henshin:Module>

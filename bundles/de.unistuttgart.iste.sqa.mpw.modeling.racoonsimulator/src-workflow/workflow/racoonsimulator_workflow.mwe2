@@ -1,0 +1,13 @@
+module modeling.RacoonsimulatorWorkflow
+
+var rootPath = "../.."
+var moduleBaseName = "de.unistuttgart.iste.sqa.mpw"
+
+Workflow {
+    component = @modeling.Workflow auto-inject {
+        rootPath = rootPath
+        sourceProjectName = "de.unistuttgart.iste.sqa.mpw.modeling.racoonsimulator"
+        generatedProjectBasePackage = "'de.unistuttgart.racoon'"
+        targetSimulatorProjectBaseName = "simulators/${moduleBaseName}.racoonsimulator"
+    }
+}

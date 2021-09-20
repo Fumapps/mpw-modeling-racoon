@@ -1,0 +1,4 @@
+context Territory
+
+/** the territory tiles must not be empty */
+invariant isInitialized: self.tiles->notEmpty();
