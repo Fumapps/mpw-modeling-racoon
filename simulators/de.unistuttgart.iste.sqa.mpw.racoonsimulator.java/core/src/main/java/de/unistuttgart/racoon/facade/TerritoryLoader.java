@@ -93,13 +93,4 @@ public class TerritoryLoader {
         }
     }
 
-    private void createTreeAt(final Location currentLocation) {
-        this.territoryBuilder.addTreeToTile(currentLocation);
-    }
-    private void createLeafAt(final Location currentLocation) {
-        this.territoryBuilder.addLeafToTile(currentLocation);
-    }
-    private void createMushroomAt(final Location currentLocation) {
-        this.territoryBuilder.addMushroomToTile(currentLocation);
-    }
 }

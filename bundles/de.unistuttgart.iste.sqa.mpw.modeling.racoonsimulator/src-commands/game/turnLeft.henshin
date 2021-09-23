@@ -1,18 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_MFrY0CZjEeuiY_E2amZoVQ" name="turnLeft">
-  <imports href="../../model/Racoon.ecore#/"/>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_NOYy8CXXEeuHDMx4P4HuOA" name="turnLeft" description="Changes the looking direction 90 degrees to the left, e.g., when looking north the racoon will look towards west afterwards.">
   <imports href="http://www.mpw.uni-stuttgart.de/mpw#/"/>
-  <units xsi:type="henshin:Rule" xmi:id="_hCUK0CZjEeuiY_E2amZoVQ" name="turnLeft">
-    <lhs xmi:id="_hCXOICZjEeuiY_E2amZoVQ" name="Lhs">
-      <nodes xmi:id="_Z_xvEBLaEeyRtoBjqFMidw" name="self">
+  <imports href="../../model/Racoon.ecore#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_CYLcYCXtEeuiY_E2amZoVQ" name="turnLeftNorth">
+    <lhs xmi:id="_CYnhQCXtEeuiY_E2amZoVQ" name="Lhs">
+      <nodes xmi:id="_dOn6YCXtEeuiY_E2amZoVQ" name="self">
         <type href="../../model/Racoon.ecore#//Racoon"/>
+        <attributes xmi:id="_i5iRgCZrEeuiY_E2amZoVQ" value="&quot;NORTH&quot;">
+          <type href="http://www.mpw.uni-stuttgart.de/mpw#//Actor/direction"/>
+        </attributes>
       </nodes>
     </lhs>
-    <rhs xmi:id="_hCXOISZjEeuiY_E2amZoVQ" name="Rhs">
-      <nodes xmi:id="_Z_yWIBLaEeyRtoBjqFMidw" name="self">
+    <rhs xmi:id="_CYnhQSXtEeuiY_E2amZoVQ" name="Rhs">
+      <nodes xmi:id="_dOn6YSXtEeuiY_E2amZoVQ" name="self">
         <type href="../../model/Racoon.ecore#//Racoon"/>
+        <attributes xmi:id="_kCqcwCZrEeuiY_E2amZoVQ" value="&quot;WEST&quot;">
+          <type href="http://www.mpw.uni-stuttgart.de/mpw#//Actor/direction"/>
+        </attributes>
       </nodes>
     </rhs>
-    <mappings xmi:id="_Z_yWIRLaEeyRtoBjqFMidw" origin="_Z_xvEBLaEeyRtoBjqFMidw" image="_Z_yWIBLaEeyRtoBjqFMidw"/>
+    <mappings xmi:id="_dOohcCXtEeuiY_E2amZoVQ" origin="_dOn6YCXtEeuiY_E2amZoVQ" image="_dOn6YSXtEeuiY_E2amZoVQ"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_o4x4ICZgEeuiY_E2amZoVQ" name="turnLeftSouth">
+    <lhs xmi:id="_o4x4ISZgEeuiY_E2amZoVQ" name="Lhs">
+      <nodes xmi:id="_o4x4IiZgEeuiY_E2amZoVQ" name="self">
+        <type href="../../model/Racoon.ecore#//Racoon"/>
+        <attributes xmi:id="_MyZbQCZrEeuiY_E2amZoVQ" value="&quot;SOUTH&quot;">
+          <type href="http://www.mpw.uni-stuttgart.de/mpw#//Actor/direction"/>
+        </attributes>
+      </nodes>
+    </lhs>
+    <rhs xmi:id="_o4x4JyZgEeuiY_E2amZoVQ" name="Rhs">
+      <nodes xmi:id="_o4x4KCZgEeuiY_E2amZoVQ" name="self">
+        <type href="../../model/Racoon.ecore#//Racoon"/>
+        <attributes xmi:id="_QI418CZrEeuiY_E2amZoVQ" value="&quot;EAST&quot;">
+          <type href="http://www.mpw.uni-stuttgart.de/mpw#//Actor/direction"/>
+        </attributes>
+      </nodes>
+    </rhs>
+    <mappings xmi:id="_o4x4LiZgEeuiY_E2amZoVQ" origin="_o4x4IiZgEeuiY_E2amZoVQ" image="_o4x4KCZgEeuiY_E2amZoVQ"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_p5lN8iZgEeuiY_E2amZoVQ" name="turnLeftWest">
+    <lhs xmi:id="_p5lN8yZgEeuiY_E2amZoVQ" name="Lhs">
+      <nodes xmi:id="_p5lN9CZgEeuiY_E2amZoVQ" name="self">
+        <type href="../../model/Racoon.ecore#//Racoon"/>
+        <attributes xmi:id="_WDfzMCZrEeuiY_E2amZoVQ" value="&quot;WEST&quot;">
+          <type href="http://www.mpw.uni-stuttgart.de/mpw#//Actor/direction"/>
+        </attributes>
+      </nodes>
+    </lhs>
+    <rhs xmi:id="_p5lN-SZgEeuiY_E2amZoVQ" name="Rhs">
+      <nodes xmi:id="_p5lN-iZgEeuiY_E2amZoVQ" name="self">
+        <type href="../../model/Racoon.ecore#//Racoon"/>
+        <attributes xmi:id="_W7d9ACZrEeuiY_E2amZoVQ" value="&quot;SOUTH&quot;">
+          <type href="http://www.mpw.uni-stuttgart.de/mpw#//Actor/direction"/>
+        </attributes>
+      </nodes>
+    </rhs>
+    <mappings xmi:id="_p5lOACZgEeuiY_E2amZoVQ" origin="_p5lN9CZgEeuiY_E2amZoVQ" image="_p5lN-iZgEeuiY_E2amZoVQ"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_FUGCUSZhEeuiY_E2amZoVQ" name="turnLeftEast">
+    <lhs xmi:id="_FUGCUiZhEeuiY_E2amZoVQ" name="Lhs">
+      <nodes xmi:id="_FUGCUyZhEeuiY_E2amZoVQ" name="self">
+        <type href="../../model/Racoon.ecore#//Racoon"/>
+        <attributes xmi:id="_YQRMwCZrEeuiY_E2amZoVQ" value="&quot;EAST&quot;">
+          <type href="http://www.mpw.uni-stuttgart.de/mpw#//Actor/direction"/>
+        </attributes>
+      </nodes>
+    </lhs>
+    <rhs xmi:id="_FUGCWCZhEeuiY_E2amZoVQ" name="Rhs">
+      <nodes xmi:id="_FUGCWSZhEeuiY_E2amZoVQ" name="self">
+        <type href="../../model/Racoon.ecore#//Racoon"/>
+        <attributes xmi:id="_ZWuegCZrEeuiY_E2amZoVQ" value="&quot;NORTH&quot;">
+          <type href="http://www.mpw.uni-stuttgart.de/mpw#//Actor/direction"/>
+        </attributes>
+      </nodes>
+    </rhs>
+    <mappings xmi:id="_FUGCXyZhEeuiY_E2amZoVQ" origin="_FUGCUyZhEeuiY_E2amZoVQ" image="_FUGCWSZhEeuiY_E2amZoVQ"/>
   </units>
 </henshin:Module>

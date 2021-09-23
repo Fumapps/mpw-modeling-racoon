@@ -10,6 +10,7 @@ import de.unistuttgart.iste.sqa.mpw.framework.viewmodel.impl.GameViewPresenterBa
 import de.unistuttgart.racoon.racoon.*;
 import de.unistuttgart.racoon.facade.*;
 import javafx.beans.property.ReadOnlyListProperty;
+import javafx.beans.property.ReadOnlyObjectProperty;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,8 +27,8 @@ public class RacoonGameViewPresenter extends GameViewPresenterBase {
 	}
 
 	@Override
-	protected Size getStageSizeFromConcreteStage() {
-		return territory.getTerritorySize();
+	protected ReadOnlyObjectProperty<Size> getStageSizeFromConcreteStage() {
+		return territory.getInternalTerritory().stageSizeProperty();
 	}
 
 	@Override

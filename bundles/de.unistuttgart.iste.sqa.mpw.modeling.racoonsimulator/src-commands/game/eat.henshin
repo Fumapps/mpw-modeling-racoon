@@ -4,15 +4,34 @@
   <imports href="http://www.mpw.uni-stuttgart.de/mpw#/"/>
   <units xsi:type="henshin:Rule" xmi:id="_hCUK0CZjEeuiY_E2amZoVQ" name="eat">
     <lhs xmi:id="_hCXOICZjEeuiY_E2amZoVQ" name="Lhs">
-      <nodes xmi:id="_Z_xvEBLaEeyRtoBjqFMidw" name="self">
+      <nodes xmi:id="_Z_xvEBLaEeyRtoBjqFMidw" name="self" outgoing="_1K7vcBpGEeytQo9C0V9Hag">
         <type href="../../model/Racoon.ecore#//Racoon"/>
       </nodes>
+      <nodes xmi:id="_zX5rkBpGEeytQo9C0V9Hag" incoming="_17MuwBpGEeytQo9C0V9Hag">
+        <type href="../../model/Racoon.ecore#//Nut"/>
+      </nodes>
+      <nodes xmi:id="_0njVkBpGEeytQo9C0V9Hag" incoming="_1K7vcBpGEeytQo9C0V9Hag" outgoing="_17MuwBpGEeytQo9C0V9Hag">
+        <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
+      </nodes>
+      <edges xmi:id="_1K7vcBpGEeytQo9C0V9Hag" source="_Z_xvEBLaEeyRtoBjqFMidw" target="_0njVkBpGEeytQo9C0V9Hag">
+        <type href="http://www.mpw.uni-stuttgart.de/mpw#//TileContent/currentTile"/>
+      </edges>
+      <edges xmi:id="_17MuwBpGEeytQo9C0V9Hag" source="_0njVkBpGEeytQo9C0V9Hag" target="_zX5rkBpGEeytQo9C0V9Hag">
+        <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile/contents"/>
+      </edges>
     </lhs>
     <rhs xmi:id="_hCXOISZjEeuiY_E2amZoVQ" name="Rhs">
-      <nodes xmi:id="_Z_yWIBLaEeyRtoBjqFMidw" name="self">
+      <nodes xmi:id="_Z_yWIBLaEeyRtoBjqFMidw" name="self" outgoing="_1K7vcRpGEeytQo9C0V9Hag">
         <type href="../../model/Racoon.ecore#//Racoon"/>
       </nodes>
+      <nodes xmi:id="_0njVkRpGEeytQo9C0V9Hag" incoming="_1K7vcRpGEeytQo9C0V9Hag">
+        <type href="http://www.mpw.uni-stuttgart.de/mpw#//Tile"/>
+      </nodes>
+      <edges xmi:id="_1K7vcRpGEeytQo9C0V9Hag" source="_Z_yWIBLaEeyRtoBjqFMidw" target="_0njVkRpGEeytQo9C0V9Hag">
+        <type href="http://www.mpw.uni-stuttgart.de/mpw#//TileContent/currentTile"/>
+      </edges>
     </rhs>
     <mappings xmi:id="_Z_yWIRLaEeyRtoBjqFMidw" origin="_Z_xvEBLaEeyRtoBjqFMidw" image="_Z_yWIBLaEeyRtoBjqFMidw"/>
+    <mappings xmi:id="_0njVkhpGEeytQo9C0V9Hag" origin="_0njVkBpGEeytQo9C0V9Hag" image="_0njVkRpGEeytQo9C0V9Hag"/>
   </units>
 </henshin:Module>
