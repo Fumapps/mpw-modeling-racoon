@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RacoonViewTestBase {
 
-    private int maxCharsPerCell = 4;
+    private int maxCharsPerCell = 2;
     private static Map<String, String> characterMap = new HashMap<>();
     private RacoonGame game;
     protected Racoon racoon;
@@ -119,24 +119,23 @@ public class RacoonViewTestBase {
     }
 
     private static void initCharMapping() {
-        characterMap.put("1Corn", " 1*");
-        characterMap.put("2Corn", " 2*");
-        characterMap.put("3Corn", " 3*");
-        characterMap.put("4Corn", " 4*");
-        characterMap.put("5Corn", " 5*");
-        characterMap.put("6Corn", " 6*");
-        characterMap.put("7Corn", " 7*");
-        characterMap.put("8Corn", " 8*");
-        characterMap.put("9Corn", " 9*");
-        characterMap.put("10Corn", "10*");
-        characterMap.put("11Corn", "11*");
-        characterMap.put("12Corn", "12*");
-        characterMap.put("12PlusCorn", "12+");
-        characterMap.put("Racoon", ">");
-        characterMap.put("Racoon[90]", "v");
-        characterMap.put("Racoon[180]", "<");
-        characterMap.put("Racoon[270]", "^");
-        characterMap.put("Wall", "####");
+        characterMap.put("WallTop",      "╻ ");
+        characterMap.put("WallTop[90]",  "╸ ");
+        characterMap.put("WallTop[180]", "╹ ");
+        characterMap.put("WallTop[270]", "╺━");
+        characterMap.put("WallAll",      "╋ ");
+        characterMap.put("WallMiddle",   "▉ ");
+        characterMap.put("WallVertical",      "┃ ");
+        characterMap.put("WallVertical[90]",  "━━");
+        characterMap.put("WallEdgeTopLeft",      "┏━");
+        characterMap.put("WallEdgeTopLeft[90]",  "┓ ");
+        characterMap.put("WallEdgeTopLeft[180]", "┛ ");
+        characterMap.put("WallEdgeTopLeft[270]", "┗━");
+        characterMap.put("RacoonEast",       ">");
+        characterMap.put("RacoonEast[180]",  "<");
+        characterMap.put("RacoonSouth",      "v");
+        characterMap.put("RacoonSouth[180]", "^");
+        characterMap.put("Nut", "*");
     }
 
 }
