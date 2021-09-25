@@ -1,0 +1,4 @@
+context Racoon
+
+/** Get the current racoon's location. */
+query getLocation: self.currentTile.location;

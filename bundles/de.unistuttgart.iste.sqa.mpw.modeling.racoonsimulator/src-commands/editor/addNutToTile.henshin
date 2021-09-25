@@ -3,7 +3,7 @@
   <imports href="http://www.mpw.uni-stuttgart.de/mpw#/"/>
   <imports href="../../model/Racoon.ecore#/"/>
   <units xsi:type="henshin:Rule" xmi:id="_hCUK0CZjEeuiY_E2amZoVQ" name="addNutToTile">
-    <parameters xmi:id="_G_7WsByaEeyCatqIKjrFiA" name="location">
+    <parameters xmi:id="_G_7WsByaEeyCatqIKjrFiA" name="location" kind="IN">
       <type xsi:type="ecore:EClass" href="http://www.mpw.uni-stuttgart.de/mpw#//Location"/>
     </parameters>
     <lhs xmi:id="_hCXOICZjEeuiY_E2amZoVQ" name="Lhs">

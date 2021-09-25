@@ -1,3 +1,4 @@
 context Racoon
-/** Get the current racoon looking direction. */
+
+/** Checks if the racoon is on a nut. */
 query nutAvailable: true;

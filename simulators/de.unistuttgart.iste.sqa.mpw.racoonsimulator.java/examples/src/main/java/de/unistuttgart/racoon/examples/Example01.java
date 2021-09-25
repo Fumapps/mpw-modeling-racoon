@@ -11,17 +11,7 @@ public class Example01 extends SimpleRacoonGame {
     protected void run() {
         displayInNewGameWindow();
         racoon.move();
-        racoon.turnRight();
-        racoon.move();
-        racoon.removeLeaf();
-        racoon.turnLeft();
-        racoon.turnLeft();
-        racoon.move();
-        racoon.putLeaf();
-        racoon.turnLeft();
-        racoon.move();
-        racoon.turnRight();
-        racoon.turnRight();
+        // TODO: call further interesting commands
     }
 
 }
