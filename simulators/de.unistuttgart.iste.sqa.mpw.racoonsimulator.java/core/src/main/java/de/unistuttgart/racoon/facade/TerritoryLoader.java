@@ -54,16 +54,33 @@ public class TerritoryLoader {
                 switch (tileCode) {
                     case ' ':
                         break;
-                    // TODO: custom loader code
+                    case '#':
+                        createWallAt(currentLocation);
+                        break;
+                    case '*':
+                        createNutAt(currentLocation);
+                        break;
+                    case '^':
+                        createRacoonAt(currentLocation, Direction.NORTH);
+                        break;
+                    case '>':
+                        createRacoonAt(currentLocation, Direction.EAST);
+                        break;
+                    case 'v':
+                        createRacoonAt(currentLocation, Direction.SOUTH);
+                        break;
+                    case '<':
+                        createRacoonAt(currentLocation, Direction.WEST);
+                        break;
                     default:
-                        throw new RuntimeException("Territory loader error.");
+                        throw new RuntimeException("Territory Loader error.");
                 }
             }
         }
     }
 
     private List<String> readLinesFromTerritoryResourceFile(final String territoryFileName) throws IOException {
-        final InputStream in = getClass().getResourceAsStream(territoryFileName);
+        final InputStream in = getClass().getClassLoader().getResourceAsStream(territoryFileName);
         if (in == null) {
             throw new IOException("Unable to load the territory from the filename: " + territoryFileName);
         }
@@ -91,6 +108,18 @@ public class TerritoryLoader {
         if (object == null) {
             throw new NullPointerException();
         }
+    }
+
+    private void createWallAt(final Location currentLocation) {
+        this.territoryBuilder.addWallToTile(currentLocation);
+    }
+
+    private void createNutAt(final Location currentLocation) {
+        this.territoryBuilder.addNutToTile(currentLocation);
+    }
+
+    private void createRacoonAt(final Location currentLocation, final Direction direction) {
+        this.territoryBuilder.initRacoon(currentLocation, direction);
     }
 
 }

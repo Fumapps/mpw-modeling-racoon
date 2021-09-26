@@ -8,4 +8,5 @@ module de.unistuttgart.racoon.core {
     exports de.unistuttgart.racoon.viewmodel.impl to de.unistuttgart.racoon.ui;
 
     opens de.unistuttgart.racoon.racoon;
+    opens de.unistuttgart.racoon.territories;
 }

@@ -7,11 +7,14 @@
     operationReflection="true" importOrganizing="true">
   <foreignModel>Racoon.ecore</foreignModel>
   <genPackages prefix="Racoon" disposableProviderFactory="true" ecorePackage="Racoon.ecore#/">
+    <genClasses ecoreClass="Racoon.ecore#//Racoon"/>
     <genClasses ecoreClass="Racoon.ecore#//Territory">
-      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference Racoon.ecore#//Territory/Racoon"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference Racoon.ecore#//Territory/racoon"/>
     </genClasses>
     <genClasses ecoreClass="Racoon.ecore#//RacoonGame">
-      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference Racoon.ecore#//RacoonGame/Territory"/>
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference Racoon.ecore#//RacoonGame/territory"/>
     </genClasses>
+    <genClasses ecoreClass="Racoon.ecore#//Nut"/>
+    <genClasses ecoreClass="Racoon.ecore#//Wall"/>
   </genPackages>
 </genmodel:GenModel>
