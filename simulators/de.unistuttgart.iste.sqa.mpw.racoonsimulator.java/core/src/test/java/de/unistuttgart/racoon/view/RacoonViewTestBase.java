@@ -127,10 +127,14 @@ public class RacoonViewTestBase {
         characterMap.put("WallMiddle",   "▉ ");
         characterMap.put("WallVertical",      "┃ ");
         characterMap.put("WallVertical[90]",  "━━");
-        characterMap.put("WallEdgeTopLeft",      "┏━");
-        characterMap.put("WallEdgeTopLeft[90]",  "┓ ");
-        characterMap.put("WallEdgeTopLeft[180]", "┛ ");
-        characterMap.put("WallEdgeTopLeft[270]", "┗━");
+        characterMap.put("WallTopLeftCorner",      "┏━");
+        characterMap.put("WallTopLeftCorner[90]",  "┓ ");
+        characterMap.put("WallTopLeftCorner[180]", "┛ ");
+        characterMap.put("WallTopLeftCorner[270]", "┗━");
+        characterMap.put("WallT",      "┳━");
+        characterMap.put("WallT[90]",  "┫ ");
+        characterMap.put("WallT[180]", "┻━");
+        characterMap.put("WallT[270]", "┣━");
         characterMap.put("RacoonEast",       ">");
         characterMap.put("RacoonEast[180]",  "<");
         characterMap.put("RacoonSouth",      "v");
