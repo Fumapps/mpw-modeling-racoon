@@ -20,9 +20,16 @@ public class TileNode extends StackPane {
     }
 
     private static void loadImages() {
-        /*$FOREACH_IMAGE$
-        images.put("$IMAGE_NAME_FIRST_UPPER$", new Image("images/$IMAGE_NAME$.png"));
-        $END_FOREACH$*/
+        images.put("Tile", new Image("images/Grass.png"));
+        images.put("Nut", new Image("images/Nut.png"));
+        images.put("RacoonEast", new Image("images/RacoonEast.png"));
+        images.put("RacoonSouth", new Image("images/RacoonSouth.png"));
+        images.put("WallAll", new Image("images/WallAll.png"));
+        images.put("WallMiddle", new Image("images/WallMiddle.png"));
+        images.put("WallT", new Image("images/WallT.png"));
+        images.put("WallTop", new Image("images/WallTop.png"));
+        images.put("WallTopLeftCorner", new Image("images/WallTopLeftCorner.png"));
+        images.put("WallVertical", new Image("images/WallVertical.png"));
     }
 
     private final ViewModelCell viewModelCell;

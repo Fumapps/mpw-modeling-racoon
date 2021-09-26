@@ -14,7 +14,7 @@ import java.util.Optional;
 import static de.unistuttgart.iste.sqa.mpw.framework.utils.Preconditions.*;
 
 public abstract class SimpleRacoonGame {
-    private static final String DEFAULT_RACOON_TERRITORY = "/de.unistuttgart.racoon.territories/example01.ter";
+    private static final String DEFAULT_RACOON_TERRITORY = "de.unistuttgart.racoon.territories/example01.ter";
 
     protected static void createInstance(Class<? extends SimpleRacoonGame> racoonProgramClass) {
         try {

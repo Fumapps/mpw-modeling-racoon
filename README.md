@@ -9,6 +9,8 @@ After code-generation with Maven `package`, in `/simulators` the both simulators
 
 ## Java Simulator
 
+![screenshot java racoon simulator](simulators/de.unistuttgart.iste.sqa.mpw.racoonsimulator.java/Screenshot_RacoonSimulator_Java.png)
+
 The Java simulator uses Maven, Java 15 and JavaFX.
 
 ##  C++ Simulator

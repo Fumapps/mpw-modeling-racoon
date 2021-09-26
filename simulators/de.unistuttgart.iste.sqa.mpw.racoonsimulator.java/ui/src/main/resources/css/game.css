@@ -1,19 +1,11 @@
 .game-grid {
     -fx-background-color: white ;
-    -fx-padding: 4 ;
+    -fx-hgap: 1;
+    -fx-vgap: 1;
 }
 .game-grid-cell {
     -fx-background-color: white ;
-    -fx-background-insets: 0, 0 1 1 0 ;
-}
-.game-grid-cell.first-row {
-    -fx-background-insets: 0, 1 1 1 0 ;
-}
-.game-grid-cell.first-column {
-    -fx-background-insets: 0, 0 1 1 1 ;
-}
-.game-grid-cell.first-row.first-column {
-    -fx-background-insets: 0, 1 ;
+    -fx-background-insets: 0, 0 0 0 0 ;
 }
 .game-log {
 	-fx-background-color: white;

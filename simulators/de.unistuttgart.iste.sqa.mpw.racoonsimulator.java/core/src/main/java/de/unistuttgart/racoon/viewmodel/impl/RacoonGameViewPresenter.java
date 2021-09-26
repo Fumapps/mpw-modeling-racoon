@@ -14,6 +14,7 @@ import de.unistuttgart.racoon.racoon.Wall;
 import javafx.beans.property.ReadOnlyListProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.value.ChangeListener;
+import javafx.util.Pair;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -76,8 +77,9 @@ public class RacoonGameViewPresenter extends GameViewPresenterBase {
 	}
 
 	private void refreshWallLayer(final ViewModelCellLayer layer, final Tile tile) {
-		final String wallImageName = WallImageDeterminer.determineWallImageName(tile);
-		layer.setImageName(wallImageName);
+		final Pair<String, Integer> wallImageNameWithRotation = WallImageDeterminer.determineWallImageName(tile);
+		layer.setImageName(wallImageNameWithRotation.getKey());
+		layer.setRotation(wallImageNameWithRotation.getValue());
 		layer.setVisible(tile.getContents().stream().anyMatch(Wall.class::isInstance));
 	}
 
@@ -141,7 +143,6 @@ public class RacoonGameViewPresenter extends GameViewPresenterBase {
 				layer.setImageName("RacoonEast");
 			}
 		}
-		if (direction != null) {
-		}
+
 	}
 }
