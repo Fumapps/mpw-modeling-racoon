@@ -136,7 +136,7 @@ public class RacoonViewTestBase {
         characterMap.put("WallT[180]", "┻━");
         characterMap.put("WallT[270]", "┣━");
         characterMap.put("RacoonEast",       ">");
-        characterMap.put("RacoonEast[180]",  "<");
+        characterMap.put("RacoonWest",       "<");
         characterMap.put("RacoonSouth",      "v");
         characterMap.put("RacoonSouth[180]", "^");
         characterMap.put("Nut", "*");

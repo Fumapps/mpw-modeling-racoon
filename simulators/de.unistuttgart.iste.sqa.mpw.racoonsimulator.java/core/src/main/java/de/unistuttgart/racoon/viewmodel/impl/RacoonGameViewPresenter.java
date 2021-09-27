@@ -135,8 +135,8 @@ public class RacoonGameViewPresenter extends GameViewPresenterBase {
 				layer.setImageName("RacoonSouth");
 			}
 			case WEST -> {
-				layer.setRotation(180);
-				layer.setImageName("RacoonEast");
+				layer.setRotation(0);
+				layer.setImageName("RacoonWest");
 			}
 			case EAST -> {
 				layer.setRotation(0);

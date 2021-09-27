@@ -25,6 +25,8 @@ public class TileNode extends StackPane {
         images.put("Nut", new Image("images/Nut.png"));
         images.put("RacoonEast1", new Image("images/RacoonEast1.png"));
         images.put("RacoonEast2", new Image("images/RacoonEast2.png"));
+        images.put("RacoonWest1", new Image("images/RacoonWest1.png"));
+        images.put("RacoonWest2", new Image("images/RacoonWest2.png"));
         images.put("RacoonSouth1", new Image("images/RacoonSouth1.png"));
         images.put("RacoonSouth2", new Image("images/RacoonSouth2.png"));
         images.put("WallAll", new Image("images/WallAll.png"));
