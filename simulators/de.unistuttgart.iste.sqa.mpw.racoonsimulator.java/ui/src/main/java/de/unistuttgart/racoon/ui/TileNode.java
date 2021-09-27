@@ -1,5 +1,6 @@
 package de.unistuttgart.racoon.ui;
 
+import de.unistuttgart.iste.sqa.mpw.framework.datatypes.Location;
 import de.unistuttgart.iste.sqa.mpw.framework.viewmodel.ViewModelCell;
 import de.unistuttgart.iste.sqa.mpw.framework.viewmodel.ViewModelCellLayer;
 import javafx.beans.binding.Bindings;
@@ -22,8 +23,10 @@ public class TileNode extends StackPane {
     private static void loadImages() {
         images.put("Tile", new Image("images/Grass.png"));
         images.put("Nut", new Image("images/Nut.png"));
-        images.put("RacoonEast", new Image("images/RacoonEast.png"));
-        images.put("RacoonSouth", new Image("images/RacoonSouth.png"));
+        images.put("RacoonEast1", new Image("images/RacoonEast1.png"));
+        images.put("RacoonEast2", new Image("images/RacoonEast2.png"));
+        images.put("RacoonSouth1", new Image("images/RacoonSouth1.png"));
+        images.put("RacoonSouth2", new Image("images/RacoonSouth2.png"));
         images.put("WallAll", new Image("images/WallAll.png"));
         images.put("WallMiddle", new Image("images/WallMiddle.png"));
         images.put("WallT", new Image("images/WallT.png"));
@@ -71,11 +74,26 @@ public class TileNode extends StackPane {
     private void addLayer(final ViewModelCellLayer layer) {
         var imageView = createImageView();
         imageView.visibleProperty().bind(layer.visibleProperty());
-        imageView.imageProperty().bind(Bindings.createObjectBinding(() -> images.get(layer.getImageName()), layer.imageNameProperty()));
+        imageView.imageProperty().bind(Bindings.createObjectBinding(() -> getImageForLayer(layer), layer.imageNameProperty()));
         imageView.rotateProperty().bind(layer.rotationProperty());
 
         imageViews.put(layer, imageView);
         JavaFXUtil.blockingExecuteOnFXThread(() -> this.getChildren().add(imageView));
+    }
+
+    private Image getImageForLayer(ViewModelCellLayer layer) {
+        final String imageName = layer.getImageName();
+        if (imageName.startsWith("Racoon")) {
+            return getAlternatingRacoonImage(imageName);
+        }
+        return images.get(imageName);
+    }
+
+    private Image getAlternatingRacoonImage(String imageName) {
+        final Location location = viewModelCell.getLocation();
+        final int oddNumber = (location.getColumn() + location.getRow()) % 2;
+        final int suffixNumber = oddNumber + 1;
+        return images.get(imageName + suffixNumber);
     }
 
     private ImageView createImageView() {
