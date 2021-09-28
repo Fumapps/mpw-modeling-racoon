@@ -20,8 +20,8 @@ public class RacoonViewModelTest extends RacoonViewTestBase {
                 "|┏━|━━|━━|━━|┓ |\n" +
                 "|┃ |> |  |* |┃ |\n" +
                 "|┗━|━━|━━|━━|┛ |\n");
-        // assertEquals(false, racoon.nutAvailable());
-        // assertEquals(true, racoon.frontIsClear());
+        assertEquals(false, racoon.nutAvailable());
+        assertEquals(true, racoon.frontIsClear());
         assertEquals(Direction.EAST, racoon.getDirection());
         assertEquals(1, racoon.getLocation().getRow());
         assertEquals(1, racoon.getLocation().getColumn());
@@ -36,11 +36,35 @@ public class RacoonViewModelTest extends RacoonViewTestBase {
                 "|┃ |  |╺━|┳━|╸ |  |┃ |\n" +
                 "|┃ |  |* |┃ |* |  |┃ |\n" +
                 "|┗━|━━|━━|┻━|━━|━━|┛ |\n");
-        // assertEquals(false, racoon.nutAvailable());
-        // assertEquals(true, racoon.frontIsClear());
+        assertEquals(false, racoon.nutAvailable());
+        assertEquals(false, racoon.frontIsClear());
         assertEquals(Direction.SOUTH, racoon.getDirection());
         assertEquals(1, racoon.getLocation().getRow());
         assertEquals(3, racoon.getLocation().getColumn());
+    }
+
+
+    @Test
+    public void testMoveAndEat_Example01() throws IOException {
+        withTerritory("example01.ter");
+
+        racoon.move();
+        racoon.move();
+        assertEquals(true, racoon.nutAvailable());
+        racoon.eat();
+        racoon.turnLeft();
+        racoon.turnLeft();
+        racoon.move();
+
+        assertTerritory(
+                "|┏━|━━|━━|━━|┓ |\n" +
+                "|┃ |  |< |  |┃ |\n" +
+                "|┗━|━━|━━|━━|┛ |\n");
+        assertEquals(false, racoon.nutAvailable());
+        assertEquals(true, racoon.frontIsClear());
+        assertEquals(Direction.WEST, racoon.getDirection());
+        assertEquals(1, racoon.getLocation().getRow());
+        assertEquals(2, racoon.getLocation().getColumn());
     }
 
 }
