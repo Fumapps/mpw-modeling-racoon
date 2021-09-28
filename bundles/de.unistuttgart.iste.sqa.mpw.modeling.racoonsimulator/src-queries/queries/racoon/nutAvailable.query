@@ -1,4 +1,4 @@
 context Racoon
 
 /** Checks if the racoon is on a nut. */
-query nutAvailable: true;
+query nutAvailable: self.currentTile.contents->typeSelect(Nut)->notEmpty();
