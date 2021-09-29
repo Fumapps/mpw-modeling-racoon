@@ -1,3 +1,13 @@
-context Territory::addWallToTile
+context Territory::addWallToTile(location:Location)
 
-precondition: true;
+/** location has to be on the territory */
+precondition:
+    self.isLocationInTerritory(location);
+
+/** the tile at the given location has to be empty */
+precondition:
+    self.getTileAt(location).contents->isEmpty();
+
+/** a wall has to be placed on the tile's location */
+postcondition: 
+    self.getTileAt(location).contents->typeSelect(Wall)->size() = 1;

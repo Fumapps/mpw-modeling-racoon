@@ -1,3 +1,4 @@
 context Racoon::move
 
-precondition: true;
+/** racoon's front must not be blocked or outside of the territory*/
+precondition: self.frontIsClear();

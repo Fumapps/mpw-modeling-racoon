@@ -1,3 +1,7 @@
 context Racoon::eat
 
-precondition: true;
+/** there has to be a nut available on the racoon's tile */
+precondition: self.nutAvailable();
+
+/** the racoon must not be on any nut */
+postcondition: !self.nutAvailable();
