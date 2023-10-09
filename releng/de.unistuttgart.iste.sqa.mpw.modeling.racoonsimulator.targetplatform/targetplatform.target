@@ -22,8 +22,8 @@
 			<unit id="org.eclipse.xtend.middleend.xtend.feature.group" version="2.2.0.v201605260315"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-			<repository location="http://download.eclipse.org/modeling/emft/henshin/updates/release"/>
-			<unit id="org.eclipse.emf.henshin.sdk.feature.group" version="1.6.0.202002251401"/>
+			<repository location="http://download.eclipse.org/modeling/emft/henshin/updates/1.6.0"/>
+			<unit id="org.eclipse.emf.henshin.sdk.feature.group" version="1.6.0.202001052147"/>
 		</location>
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
             <repository location="https://download.eclipse.org/tools/orbit/downloads/drops/R20201130205003/repository"/>
