@@ -12,6 +12,8 @@
         <maven.compiler.release>15</maven.compiler.release>
         <tycho-version>2.2.0</tycho-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <eclipse.core.version>3.20.0</eclipse.core.version>
+        <equinox.version>3.14.0</equinox.version>
         <xtext.version>2.24.0</xtext.version>
         <emf.mwe.launch.version>2.12.0</emf.mwe.launch.version>
         <tycho.disableP2Mirrors>true</tycho.disableP2Mirrors>
