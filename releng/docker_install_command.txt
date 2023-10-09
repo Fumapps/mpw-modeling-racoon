@@ -1,1 +1,1 @@
-docker run -it --rm --name racoon-docker -v "$(pwd)":/usr/src/racoon -v "/usr/myuser/.m2":/usr/root/.m2 -w /usr/src/racoon maven:3.8.3-openjdk-17 mvn clean install
+docker run -it --rm --name racoon-docker -v "$(pwd)":/usr/src -e MAVEN_HOME="/usr/src/.m2" -w /usr/src maven:3.8.3-openjdk-17 mvn clean install
