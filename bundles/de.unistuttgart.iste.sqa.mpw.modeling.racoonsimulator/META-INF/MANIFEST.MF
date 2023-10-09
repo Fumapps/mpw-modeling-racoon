@@ -41,7 +41,7 @@ Require-Bundle: org.eclipse.xtend.profiler;resolution:=optional,
  org.eclipse.cdt.core;bundle-version="7.1.100",
  org.eclipse.xtend.util.stdlib;bundle-version="2.2.0"
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-15
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: racoon,
  racoon.impl,
  racoon.util
