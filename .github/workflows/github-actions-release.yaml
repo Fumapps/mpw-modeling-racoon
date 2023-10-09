@@ -1,0 +1,53 @@
+name: Release with Maven / CMake
+
+on:
+  push:
+    tags:
+      - '*.*.*'
+      - '!*.*.*-cpp-simulator'
+
+env:
+  CPP_MODULE_BASE_NAME: "cpp-simulator"
+  CPP_MODULE_TAG_SUFFIX: "cpp-simulator"
+
+jobs:
+  call-build-workflow:
+    uses: ./.github/workflows/workflow-build.yaml
+    secrets:
+      MAVEN_REPO_USER: ${{ secrets.MAVEN_REPO_USER }}
+      MAVEN_REPO_PASS: ${{ secrets.MAVEN_REPO_PASS }}
+  release:
+    runs-on: ubuntu-latest
+    environment: rss-artifactory-mpw-deploy
+    needs: call-build-workflow
+    steps:
+      - uses: actions/checkout@v2
+
+      # Prepare Git Repository
+      - name: set identity
+        run: git config user.email "mpw-deployment@users.noreply.github.com" && git config user.name "Deployment"
+
+      # Switch to snapshot cpp module branch
+      - name: switch to snapshot cpp module branch
+        run: git reset --hard && git fetch && git checkout ${{ env.CPP_MODULE_BASE_NAME }}-snapshot
+
+      # Copy cpp module artifacts to temporary folder
+      - name: copy snapshot cpp module repository
+        run:  mkdir ~/deploy-cpp-module-to-branch && cp -R ./core ~/deploy-cpp-module-to-branch && cp ./CMakeLists.txt ~/deploy-cpp-module-to-branch
+
+      # Switch to cpp module branch
+      - name: switch to cpp module branch
+        run: git fetch && git checkout ${{ env.CPP_MODULE_BASE_NAME }}
+
+      # Replace artifacts from temporary folder
+      - name: cpp module branch core folder
+        run: git clean -ffd && rm -rf ./core && rm -f CMakeLists.txt && cp -R ~/deploy-cpp-module-to-branch/core ./core && cp ~/deploy-cpp-module-to-branch/CMakeLists.txt ./CMakeLists.txt
+
+      # Deploy cpp-framework snapshot to branch
+      - name: commit cpp module
+        run: |
+          git add -A && git commit -m "C++ Simulator: Version ${{ github.ref_name }}" --allow-empty
+      - name: tag cpp module
+        run: |
+          git tag ${{ github.ref_name }}-${{ env.CPP_MODULE_TAG_SUFFIX }} && \
+          git push origin ${{ env.CPP_MODULE_BASE_NAME }} && git push origin ${{ github.ref_name }}-${{ env.CPP_MODULE_TAG_SUFFIX }}

@@ -1,0 +1,36 @@
+name: Java/C++ Build
+
+on:
+  workflow_call:
+    secrets:
+      MAVEN_REPO_USER:
+        required: true
+      MAVEN_REPO_PASS:
+        required: true
+
+env:
+  CPP_MODULE_BASE_NAME: "cpp-simulator"
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    environment: rss-artifactory-mpw-deploy
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK 17
+        uses: actions/setup-java@v1
+        with:
+          java-version: 17
+
+      # Run MDE Workflow
+      - name: Process MDE workflow with Maven
+        run: mvn clean install --file pom.xml
+
+      # Build and test Java Racoonsimulator
+      - name: Build Java Racoonsimulator
+        run: mvn --settings simulators/de.unistuttgart.iste.sqa.mpw.racoonsimulator.java/.m2/settings.xml -B deploy --file simulators/de.unistuttgart.iste.sqa.mpw.racoonsimulator.java/pom.xml
+        env:
+          MAVEN_REPO_USER: ${{ secrets.MAVEN_REPO_USER }}
+          MAVEN_REPO_PASS: ${{ secrets.MAVEN_REPO_PASS }}
