@@ -31,11 +31,11 @@
             <unit id="org.apache.commons.cli" version="1.4.0.v20200417-1444"/>
         </location>
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-            <repository location="https://raw.githubusercontent.com/Fumapps/mpw-modeling-querydsl/querydsl-updatesite/repository"/>
+            <repository location="https://raw.githubusercontent.com/SQAHamster/mpw-modeling-querydsl/1.0.0-updatesite/repository"/>
             <unit id="de.unistuttgart.iste.sqa.mpw.modeling.querydsl.feature.feature.group" version="0.0.0"/>
         </location>
     	<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-        	<repository location="https://raw.githubusercontent.com/Fumapps/mpw-modeling-framework/mpw-update-site/repository"/>
+        	<repository location="https://raw.githubusercontent.com/SQAHamster/mpw-modeling-framework/1.0.0-updatesite/repository"/>
         	<unit id="de.unistuttgart.iste.sqa.mpw.feature.feature.group" version="0.0.0"/>
     	</location>
 	</locations>
